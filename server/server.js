@@ -25,15 +25,19 @@ app.use(morgan('dev'));
 //routes
 
 
-app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/category", categoryRoutes);
-app.use('/api/v1/product',productRoutes);
-
 
 app.get('/', (req, res) => {
   res.send("server is running ")
 
 })
+
+
+app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/category", categoryRoutes);
+app.use('/api/v1/product',productRoutes);
+
+
+
 
 
 
