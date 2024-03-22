@@ -37,7 +37,11 @@ app.use('/api/v1/product',productRoutes);
 //   req.sendFile(path.join(__dirname,'./client/build/index.html'));
 // });
 
-
+app.get('*',(req,res,next)=>{
+    res.status(200).json({
+      message:'server is running '
+    })
+  })
 
 
 //port
