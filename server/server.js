@@ -16,12 +16,6 @@ dotenv.config();
 //database config
 connectDB();
 
-app.use(cors({
-  origin: "https://mern-login-gules.vercel.app/",
-  methods: ["POST", "GET", "DELETE", "PUT"],
-  credentials: true
-}));
-
 
 //middleware
 app.use(cors());
