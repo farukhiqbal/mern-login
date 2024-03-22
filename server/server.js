@@ -16,14 +16,17 @@ dotenv.config();
 //database config
 connectDB();
 
-
+app.use(cors({
+  origin: "https://mern-login-beta.vercel.app",
+  methods: ["POST", "GET", "DELETE", "PUT"],
+  credentials: true
+}));
 
 
 //middleware
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
-// app._router(express.static(path.join(__dirname,'./client/build')))
 
 //routes
 
@@ -32,10 +35,11 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoutes);
 app.use('/api/v1/product',productRoutes);
 
-//rest api
-// app.use('*',function(req,res){
-//   req.sendFile(path.join(__dirname,'./client/build/index.html'));
-// });
+
+app.get('/', (req, res) => {
+  res.send("server is running ")
+
+})
 
 
 
