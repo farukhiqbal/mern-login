@@ -17,7 +17,7 @@ dotenv.config();
 connectDB();
 
 app.use(cors({
-  origin: "https://mern-login-beta.vercel.app",
+  origin: "https://mern-login-gules.vercel.app/",
   methods: ["POST", "GET", "DELETE", "PUT"],
   credentials: true
 }));
